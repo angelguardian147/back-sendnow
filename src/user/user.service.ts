@@ -20,7 +20,7 @@ export class UserService {
     }
 
     async findOneEmail(email: string): Promise<IUser>{
-        const result = await this.userModel.findOne({'data.email': email}, {_id:0, 'data.email': 1}).exec();
+        const result = await this.userModel.findOne({'data.email': email}, {_id:0, userName: 1}).exec();
         return result;
     }
 

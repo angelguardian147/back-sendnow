@@ -40,4 +40,10 @@ export class AuthController {
         return this.authService.create(user); 
     }
 
+    @Get('/authenticated')
+    @UseGuards(JwtAuthGuard)
+    getAuthenticated(){
+        return true;
+    }
+
 }

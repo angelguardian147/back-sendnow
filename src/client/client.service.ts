@@ -105,14 +105,16 @@ export class ClientService {
                     email: email_contact
                 },
                 {
-                    firstName: createClientDto.firstName,
-                    lastName: createClientDto.lastName,
-                    tel: createClientDto.tel,
-                    estado: createClientDto.estado,
-                    address: createClientDto.address,
-                    charge: createClientDto.charge,
-                    company: createClientDto.company,
-                    email: createClientDto.email
+                    $set: {
+                        firstName: createClientDto.firstName,
+                        lastName: createClientDto.lastName,
+                        tel: createClientDto.tel,
+                        estado: createClientDto.estado,
+                        address: createClientDto.address,
+                        charge: createClientDto.charge,
+                        company: createClientDto.company,
+                        email: createClientDto.email
+                    }
                 }
             );
             return result;
